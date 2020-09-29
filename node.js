@@ -75,9 +75,7 @@ server.delete('/api/users/:id', (req,res) => {
 
 server.put('/api/users/:id', (req, res) => {
     const id = req.params.id;
-    if(!id){
-        return res.status(404).json({ message: "The user with the specified ID does not exist."})
-    };
+ 
     const changes = req.body;
     if(!req.body.name || !req.body.bio){
         return res.status(400).json({errorMessage: "Please provide name and bio for the user." })
